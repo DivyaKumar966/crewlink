@@ -1,0 +1,15 @@
+import { Router } from 'express';
+import { auth } from '../middleware/auth.js';
+import { listProjects,createProject,getProject,getWorkspace,applyToProject,reviewApplication,myProjects,projectRequests,leaveProject,updateProjectStatus } from '../controllers/projectController.js';
+const router=Router();
+router.get('/',listProjects);
+router.get('/mine',auth,myProjects);
+router.get('/:id/workspace',auth,getWorkspace);
+router.post('/',auth,createProject);
+router.get('/:id',auth,getProject);
+router.post('/:id/apply',auth,applyToProject);
+router.get('/:id/requests',auth,projectRequests);
+router.post('/:id/leave',auth,leaveProject);
+router.patch('/:id/status',auth,updateProjectStatus);
+router.post('/:id/requests/:requestId',auth,reviewApplication);
+export default router;

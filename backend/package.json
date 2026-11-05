@@ -1,0 +1,23 @@
+{
+  "name": "crewlink-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "make-admin": "node src/scripts/makeAdmin.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "socket.io": "latest",
+    "jsonwebtoken": "latest",
+    "google-auth-library": "latest",
+    "helmet": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest"
+  }
+}
